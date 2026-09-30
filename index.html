@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="refresh" content="5;url=https://discord.gg/FPxpXA4N8Z">
+
+    <title>Redirecting...</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, #5865f2 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #7289da 0%, transparent 35%),
+                #0f1117;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 460px;
+            padding: 45px 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+            animation: fadeIn 0.8s ease;
+        }
+
+        .discord-icon {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #5865f2;
+            border-radius: 25px;
+            font-size: 42px;
+            box-shadow: 0 12px 35px rgba(88, 101, 242, 0.45);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #b5bac1;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .loader {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 25px;
+            border: 4px solid rgba(255, 255, 255, 0.15);
+            border-top-color: #5865f2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .countdown {
+            color: #949ba4;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #5865f2;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.25s ease;
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.3);
+        }
+
+        .btn:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(88, 101, 242, 0.45);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #72767d;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="discord-icon">
+            💬
+        </div>
+
+        <h1>Welcome!</h1>
+
+        <p>
+            You are being redirected to our Discord server.
+            Please wait a moment...
+        </p>
+
+        <div class="loader"></div>
+
+        <div class="countdown">
+            Redirecting in <span id="timer">5</span> seconds
+        </div>
+
+        <a
+            class="btn"
+            href="https://discord.gg/FPxpXA4N8Z"
+        >
+            Join Discord
+        </a>
+
+        <div class="footer">
+            Powered by GitHub Pages
+        </div>
+
+    </div>
+
+    <script>
+        let seconds = 5;
+        const timer = document.getElementById("timer");
+
+        const countdown = setInterval(() => {
+            seconds--;
+            timer.textContent = seconds;
+
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = "https://discord.gg/FPxpXA4N8Z";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
